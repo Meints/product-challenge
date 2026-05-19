@@ -1,0 +1,171 @@
+type: collection.insomnia.rest/5.0
+name: Product-api
+meta:
+  id: wrk_b8edf4a510574325aedb0d82d7dc54f6
+  created: 1779212232120
+  modified: 1779212232120
+  description: ""
+collection:
+  - url: "{{baseUrl}}"
+    name: List Products
+    meta:
+      id: req_a9d781a53fd346be8fa23e65af568474
+      created: 1779212528007
+      modified: 1779213009928
+      isPrivate: false
+      description: ""
+      sortKey: -1779212528007
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{baseUrl}}"
+    name: Create Product
+    meta:
+      id: req_f282b1fb0767499e81fee080baa31c6d
+      created: 1779212537696
+      modified: 1779213707529
+      isPrivate: false
+      description: ""
+      sortKey: -1779212537696
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Teste apagar",
+          "description": "Mochila Nike",
+          "price": 69.90,
+          "stock": 15
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{baseUrl}}/7"
+    name: Product
+    meta:
+      id: req_2cbf58f70e46466287e80260203c7516
+      created: 1779212969768
+      modified: 1779213325702
+      isPrivate: false
+      description: ""
+      sortKey: -1779212969768
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{baseUrl}}?name=gamer&min_price=40&max_price=200"
+    name: List Products (Query Params)
+    meta:
+      id: req_031d428406844c57beb1813bd1460f0c
+      created: 1779213025970
+      modified: 1779213132651
+      isPrivate: false
+      description: ""
+      sortKey: -1773381990140.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{baseUrl}}/7"
+    name: Update Product
+    meta:
+      id: req_eea13e8384164073b03792acf03e2372
+      created: 1779213537910
+      modified: 1779213691765
+      isPrivate: false
+      description: ""
+      sortKey: -1779212532851.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Relógio Cássio",
+          "description": "Relógio minimalista Cássio",
+          "price": 39.90,
+          "stock": 12
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{baseUrl}}/9"
+    name: New Request
+    meta:
+      id: req_b41dae5a5b8348afb20d9c1d5b46a270
+      created: 1779213723884
+      modified: 1779213732814
+      isPrivate: false
+      description: ""
+      sortKey: -1779213723884
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_30928a3796e4d57ec452bba054e4af90b0796d7c
+    created: 1779212232144
+    modified: 1779212232144
+environments:
+  name: Base Environment
+  meta:
+    id: env_30928a3796e4d57ec452bba054e4af90b0796d7c
+    created: 1779212232142
+    modified: 1779212517177
+    isPrivate: false
+  data:
+    baseUrl: http://127.0.0.1:8000/api/products
