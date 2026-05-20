@@ -2,6 +2,8 @@
 
 API REST para gerenciamento de produtos desenvolvida com Laravel como desafio técnico. Implementa operações CRUD completas, cache inteligente na listagem, filtros via query params, paginação, validação centralizada e respostas padronizadas.
 
+> Este repositório inclui também um **frontend opcional** (React + TypeScript) para visualização dos dados.
+
 ## Tecnologias
 
 - **Laravel 12** — framework principal
@@ -9,6 +11,7 @@ API REST para gerenciamento de produtos desenvolvida com Laravel como desafio t�
 - **SQLite** — SQLite — banco de dados utilizado para simplificar a execução do projeto
 - **PHPUnit** — testes automatizados
 - **Composer** — gestão de dependências
+- **React 19 + TypeScript + Vite** — frontend (opcional, apenas para visualização)
 
 ## Instalação
 
@@ -86,15 +89,15 @@ GET /api/products/{id}
 
 ```json
 {
-    "status": "success",
-    "message": "Success",
-    "data": {
-        "id": 1,
-        "name": "Mouse Gamer",
-        "description": "RGB Mouse",
-        "price": 199.9,
-        "stock": 10
-    }
+  "status": "success",
+  "message": "Success",
+  "data": {
+    "id": 1,
+    "name": "Mouse Gamer",
+    "description": "RGB Mouse",
+    "price": 199.9,
+    "stock": 10
+  }
 }
 ```
 
@@ -108,10 +111,10 @@ POST /api/products
 
 ```json
 {
-    "name": "Mouse Gamer",
-    "description": "RGB Mouse",
-    "price": 199.9,
-    "stock": 10
+  "name": "Mouse Gamer",
+  "description": "RGB Mouse",
+  "price": 199.9,
+  "stock": 10
 }
 ```
 
@@ -119,15 +122,15 @@ POST /api/products
 
 ```json
 {
-    "status": "success",
-    "message": "Product created successfully",
-    "data": {
-        "id": 1,
-        "name": "Mouse Gamer",
-        "description": "RGB Mouse",
-        "price": 199.9,
-        "stock": 10
-    }
+  "status": "success",
+  "message": "Product created successfully",
+  "data": {
+    "id": 1,
+    "name": "Mouse Gamer",
+    "description": "RGB Mouse",
+    "price": 199.9,
+    "stock": 10
+  }
 }
 ```
 
@@ -159,9 +162,9 @@ DELETE /api/products/{id}
 
 ```json
 {
-    "status": "success",
-    "message": "Product deleted successfully",
-    "data": null
+  "status": "success",
+  "message": "Product deleted successfully",
+  "data": null
 }
 ```
 
@@ -234,6 +237,32 @@ Ou com PHPUnit diretamente:
 ```bash
 ./vendor/bin/phpunit
 ```
+
+## Frontend (opcional)
+
+Há um frontend React + TypeScript + Vite em `frontend/` que consome a API para exibir e gerenciar produtos em uma interface visual.
+
+### Executando o frontend
+
+```bash
+# Acessar a pasta do frontend
+cd frontend
+
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento (porta 5173)
+npm run dev
+```
+
+A aplicação espera a API rodando em `http://localhost:8000`. O Vite já está configurado com proxy para redirecionar as chamadas `/api` para o backend.
+
+```bash
+# Para gerar os arquivos estáticos de produção
+npm run build
+```
+
+> O frontend é apenas um complemento visual. Toda a lógica de negócio, validação, cache e persistência está no backend.
 
 ## Collection do Insomnia
 
